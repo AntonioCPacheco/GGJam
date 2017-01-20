@@ -12,22 +12,22 @@ public class InputManager : MonoBehaviour {
 
     public bool Left()
     {
-        return Input.GetKeyDown("w") || Input.GetKeyDown("W");
+        return Input.GetKey(KeyCode.A);
     }
 
     public bool Right()
     {
-        return Input.GetKeyDown("w") || Input.GetKeyDown("W");
+        return Input.GetKey(KeyCode.D);
     }
 
     public bool Up()
     {
-        return Input.GetKeyDown("w") || Input.GetKeyDown("W");
+        return Input.GetKey(KeyCode.W);
     }
 
     public bool Down()
     {
-        return Input.GetKeyDown("w") || Input.GetKeyDown("W");
+        return Input.GetKey(KeyCode.S);
     }
 
     public Vector3 Mouse_Click()
