@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\ReflectionObject.cs" />
+    <Compile Include="Assets\Scripts\RepeaterObject.cs" />
     <Compile Include="Assets\Scripts\Wave_Behaviour.cs" />
     <Compile Include="Assets\Scripts\Wave_Emission.cs" />
   </ItemGroup>

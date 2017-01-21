@@ -4,11 +4,7 @@ using System;
 public class ReflectionObject : InteractableObject
 {
     public override void trigger(RaycastHit2D col, Vector2 origin, float radius)
-    {/*
-        Vector2 numberOne = new Vector2(-1,-1);
-        Vector2 numberTwo = new Vector2(1, 0);
-        Debug.Log(Quaternion.AngleAxis(90, Vector3.forward) * numberTwo);*/
-        //Debug.Log("Angle 2 - 1 : " + Vector2.Angle(numberTwo, numberOne));
+    {
         Debug.DrawLine(col.point, col.normal * 10, Color.red);
         Vector2 incident = col.point - origin;
 
@@ -17,10 +13,7 @@ public class ReflectionObject : InteractableObject
         Vector3 cross = Vector3.Cross(col.normal, incident);
         if (cross.z > 0)
         {
-            Debug.Log("hi");
-            angle = 360 - angle;
-            angle = 360 - angle;
-            angle = 2 * (180 - angle);
+            angle = 2*(180 - angle);
         } else if(angle > 90)
         {
             angle = -2*(180 - angle);
@@ -28,10 +21,10 @@ public class ReflectionObject : InteractableObject
 
         //Debug.Log(angle);
         Vector2 outgoing = Quaternion.AngleAxis(angle, Vector3.forward) * ((origin - col.point).normalized);
-        //Debug.DrawLine(col.point, origin * radius, Color.green);
+        Vector2 scaledDirection = Vector2.Scale(outgoing-origin, new Vector2((1-col.fraction)*radius, (1 - col.fraction) * radius));
+        outgoing = scaledDirection + col.point;
 
-        Physics2D.Linecast(col.point, outgoing * ((1-col.fraction) * radius));
-        Debug.Log(col.fraction);
-        Debug.DrawLine(col.point, outgoing * ((1 - col.fraction) * radius), Color.white);
+        Physics2D.Linecast(col.point, outgoing);
+        Debug.DrawLine(col.point, outgoing, Color.white);
     }
 }
