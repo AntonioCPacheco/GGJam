@@ -39,17 +39,17 @@ public class Wave_Behaviour : MonoBehaviour {
                     {
                         Debug.Log("HIT SOMETHING! It's name is: " + rayhit.collider.gameObject.name);
                         //FIXME
-                        //rayhit.collider.gameObject.GetComponent<>().trigger(transform.position, rayhit);
+                        rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
                     }
                 }
                 break;
             case (1):
                 
-                float angle = Vector2.Angle(Vector2.right, direction);
+                float angle = Vector2.Angle(Vector2.right, direction-(Vector2)transform.position);
                 Debug.Log(angle);
-                if (direction.y < transform.position.y && direction.x < transform.position.x)
+                if (direction.y < transform.position.y)
                 {
-                    angle += 180;
+                    angle = 360 - angle;
                 }
                 for (int i = 0; i <= 8; i++)
                 {
@@ -59,28 +59,18 @@ public class Wave_Behaviour : MonoBehaviour {
                     endpoint = Quaternion.AngleAxis(angle, Vector3.forward) * endpoint;
                     endpoint += new Vector2(transform.position.x, transform.position.y);
                     var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
-                    //Vector2 scaledDirection = Vector2.Scale(endpoint - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
-                    //endpoint = scaledDirection + (Vector2)transform.position;
+                    
+                    Vector2 scaledDirection = Vector2.Scale(endpoint - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
+                    endpoint = scaledDirection + (Vector2)transform.position;
+
                     RaycastHit2D rayhit = Physics2D.Linecast(transform.position, endpoint, layermask);
                     Debug.DrawLine(transform.position, endpoint, Color.black);
                     if (rayhit)
                     {
-                        //Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);
                         rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
                     }
                 }
                 break;
         }
-        
-        
-        /*
-        if(transform.localScale.x >= maxScale)
-        {
-            GameObject.Destroy(this.gameObject);
-        } else
-        {
-            float ratio = ((maxScale - minScale) * (Time.realtimeSinceStartup - timeOfCreation) / timeToSpread);
-            transform.localScale = new Vector3(transform.localScale.x + ratio, transform.localScale.y + ratio, 1);
-        }*/
 	}
 }
