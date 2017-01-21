@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-    public float moveSpeed = .02f;
-    public float maxSpeed = .05f;
+    public float moveSpeed = .2f;
+    public float maxSpeed = .5f;
 
     InputManager input;
     Rigidbody2D rigidBody;
