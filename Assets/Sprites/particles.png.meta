@@ -1,35 +1,11 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 8a652118cee2ea6449a45fd22caf91ac
-timeCreated: 1485022499
-licenseType: Free
+guid: d669f71f26e171249983b5773066cce7
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-=======
-guid: f3ec526a2cd024a47b27a84db0bd8e10
-timeCreated: 1485022221
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName:
-    21300000: particles_0
-    21300002: particles_1
-    21300004: particles_2
-    21300006: particles_3
-    21300008: particles_4
-    21300010: particles_5
-    21300012: particles_6
-    21300014: particles_7
-    21300016: particles_8
-    21300018: particles_9
-  serializedVersion: 2
-  mipmaps:
-    mipMapMode: 0
-    enableMipMap: 0
->>>>>>> 0cc1c5268ed77ab6955d9e8f33f6ce84b0e87e0d
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -51,13 +27,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
     filterMode: -1
-    aniso: -1
-=======
-    filterMode: 0
     aniso: 16
->>>>>>> 0cc1c5268ed77ab6955d9e8f33f6ce84b0e87e0d
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -70,154 +41,15 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
-=======
-  spriteBorder: {x: 3, y: 1, z: 117, w: 1}
-  spritePixelsToUnits: 12
->>>>>>> 0cc1c5268ed77ab6955d9e8f33f6ce84b0e87e0d
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-<<<<<<< HEAD
     sprites: []
-=======
-    sprites:
-    - serializedVersion: 2
-      name: particles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_1
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_2
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_3
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_4
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_5
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_6
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_7
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_8
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: particles_9
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 0
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
->>>>>>> 0cc1c5268ed77ab6955d9e8f33f6ce84b0e87e0d
     outline: []
   spritePackingTag: 
   userData: 
