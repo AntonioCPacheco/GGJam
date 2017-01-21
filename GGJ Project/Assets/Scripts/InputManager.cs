@@ -36,6 +36,18 @@ public class InputManager : MonoBehaviour
 
     public Vector3 Right_Mouse_Click()
     {
+        if (Input.GetMouseButton(1))
+        {
+            return Input.mousePosition;
+        }
+        else
+        {
+            return new Vector3(-1, -1, -1);
+        }
+    }
+
+    public Vector3 Right_Mouse_Click_Down()
+    {
         if (Input.GetMouseButtonDown(1))
         {
             return Input.mousePosition;

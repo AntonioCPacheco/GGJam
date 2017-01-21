@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Player_Attack.cs" />
     <Compile Include="Assets\Scripts\ReflectionObject.cs" />
     <Compile Include="Assets\Scripts\RepeaterObject.cs" />
     <Compile Include="Assets\Scripts\Wave_Behaviour.cs" />

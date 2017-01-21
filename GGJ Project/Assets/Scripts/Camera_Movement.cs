@@ -1,22 +1,4 @@
-﻿/*using UnityEngine;
-using System.Collections;
-
-public class Camera_Movement : MonoBehaviour {
-
-    public Transform player;
-    public float camSpeed = .25f;
-
-    Vector3 offset = new Vector3(0.0f, 0.0f, -6.5f);
-
-    public void LateUpdate()
-    {
-        Vector3 desiredPosition = player.transform.position + offset;
-        transform.position = Vector3.Lerp(transform.position,desiredPosition,camSpeed);
-    }
-
-}
-*/
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Camera_Movement : MonoBehaviour {
