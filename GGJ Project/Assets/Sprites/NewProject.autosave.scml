@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r9">
+    <folder id="0">
+        <file id="0" name="cosmic_blob_min1.png" width="32" height="32" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="cosmic_blob_min1_2.png" width="32" height="32" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="200" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="60">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="111">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="159">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="cosmic_blob_min1">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="0.179916" y="0.054393"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="cosmic_blob_min1_2">
+                <key id="0" time="60" spin="0">
+                    <object folder="0" file="1" x="0.209205"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="cosmic_blob_min1_000">
+                <key id="0" time="159" spin="0">
+                    <object folder="0" file="0" x="31.171548" y="-0.41841" angle="0" scale_x="-0.968956"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="cosmic_blob_min1_2_000">
+                <key id="0" time="111" spin="0">
+                    <object folder="0" file="1" x="28.661088" y="-6.485356" angle="0" scale_x="-0.79992"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
