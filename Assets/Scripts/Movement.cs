@@ -3,11 +3,15 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-    public float moveSpeed = .2f;
+    public float moveSpeed = .0f;
+    public float acceleration = .03f;
+    public float friction = .01f;
     public float maxSpeed = .5f;
 
     InputManager input;
     Rigidbody2D rigidBody;
+
+    Vector2 vel;
 
     void Start()
     {
@@ -17,26 +21,36 @@ public class Movement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        var vel = rigidBody.velocity;
-        if (input.Up()) {
-            vel += new Vector2(0.0f, moveSpeed);
+
+        float h = Input.GetAxisRaw ("Horizontal");
+        float v = Input.GetAxisRaw ("Vertical");
+        if (Mathf.Abs(h) > 0.0f || Mathf.Abs(v) > 0.0f)
+        {
+            moveSpeed += acceleration * Time.deltaTime;
         }
-
-        if (input.Down()) {
-            vel += new Vector2(0.0f, -moveSpeed);
+        else
+        {
+            moveSpeed -= friction * Time.deltaTime;
         }
+        moveSpeed = Mathf.Clamp(moveSpeed, 0.0f, maxSpeed);
+        Move (h, v);
 
-        if (input.Left()) {
-            vel += new Vector2(-moveSpeed, 0.0f);
-        }
+    }
 
-        if (input.Right()) {
-            vel += new Vector2(moveSpeed, 0.0f);
-        }
+    void Move(float h, float v)
+    {
+        //vel.Set(h, v);
+        vel += new Vector2(h, v);
 
-        vel.x = Mathf.Clamp(vel.x, -maxSpeed, maxSpeed);
-        vel.y = Mathf.Clamp(vel.y, -maxSpeed, maxSpeed);
+        vel = vel.normalized * moveSpeed * Time.deltaTime;
 
-        rigidBody.velocity = vel;
+        rigidBody.MovePosition((Vector2)transform.position + vel);
+
+    }
+
+    void Update()
+    {
+        //moveSpeed -= (dampTime * Time.deltaTime);
+        //rigidBody.velocity = vel.normalized * moveSpeed;
     }
 }
