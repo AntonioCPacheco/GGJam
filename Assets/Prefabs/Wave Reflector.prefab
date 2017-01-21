@@ -85,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcbbac968d892e34fa678563025499e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wavePrefab: {fileID: 1000011085614116, guid: f391bf16f23d8e747863f6e45daf129a, type: 2}
 --- !u!212 &212000012492468528
 SpriteRenderer:
   m_ObjectHideFlags: 1

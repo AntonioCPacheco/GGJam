@@ -4,7 +4,7 @@ using System.Collections;
 public class Wave_Emission : MonoBehaviour {
 
     public GameObject wavePrefab;
-    public int mode = 0; //0 - periodic | 1 - one time
+    public int mode = 1; //0 - periodic | 1 - one time
     public int period = 10;
     float lastTime;
 

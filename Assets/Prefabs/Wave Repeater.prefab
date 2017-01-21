@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000012033815346}
   - 68: {fileID: 68000013443765888}
   - 114: {fileID: 114000012446447294}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Wave Repeater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
