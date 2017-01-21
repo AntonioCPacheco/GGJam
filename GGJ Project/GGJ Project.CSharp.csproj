@@ -66,8 +66,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera_Movement.cs" />
+    <Compile Include="Assets\Scripts\DispersionObject.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\ReflectionObject.cs" />
     <Compile Include="Assets\Scripts\Wave_Behaviour.cs" />
     <Compile Include="Assets\Scripts\Wave_Emission.cs" />
   </ItemGroup>

@@ -4,29 +4,41 @@ using System.Collections;
 public class Wave_Behaviour : MonoBehaviour {
 
     public Vector2 direction;
-    public int mode = 0; //0 - omnidirectional | 1 - directional
+    public int mode = 1; //0 - omnidirectional | 1 - directional
     public float radius = 1.5f;
+    public float timeToExpand = 3;
     float currentRadius = 0;
+
+    float startTime;
 
 	// Use this for initialization
 	void Start () {
+        //TEMP
+        direction = new Vector2(0,1);
+        startTime = Time.realtimeSinceStartup;
         if(mode == 1)
             direction.Normalize();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        currentRadius += 0.1f;
+        if(Time.realtimeSinceStartup - startTime > timeToExpand)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+        currentRadius = radius * ((Time.realtimeSinceStartup - startTime)/timeToExpand);
         switch (mode)
         {
             case (0):
                 for(int i = 0; i < 64; i++)
                 {
-                    Vector2 endpoint = new Vector2(Mathf.Cos((2*Mathf.PI / 64)*i), Mathf.Sin((2 * Mathf.PI / 64) * i));
-                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, LayerMask.NameToLayer("WaveCollision"));
-                    if(rayhit)
+                    Vector2 endpoint = new Vector2(Mathf.Cos((2*Mathf.PI / 64) * i), -Mathf.Sin((2*Mathf.PI / 64) * i));
+                    var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
+                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, layermask);
+                    Debug.DrawLine(transform.position, currentRadius * endpoint.normalized, Color.black);
+                    if (rayhit.collider != null)
                     {
-                        Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);
+                        Debug.Log("HIT SOMETHING! It's name is: " + rayhit.collider.gameObject.name);
                         //FIXME
                         //rayhit.collider.gameObject.GetComponent<>().trigger(transform.position, rayhit);
                     }
@@ -36,7 +48,12 @@ public class Wave_Behaviour : MonoBehaviour {
                 for(int i = 0; i < 8; i++)
                 {
                     Vector2 endpoint = new Vector2(Mathf.Cos((2 * Mathf.PI / 64) * i), Mathf.Sin((2 * Mathf.PI / 64) * i));
-                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, LayerMask.NameToLayer("WaveCollision"));
+                    float angle = Vector2.Angle(Vector2.right, direction);
+                    Debug.Log(angle);
+                    endpoint = Quaternion.AngleAxis(angle - 22.5f, Vector3.forward) * endpoint;
+                    var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
+                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, layermask);
+                    Debug.DrawLine(transform.position, currentRadius * endpoint.normalized, Color.black);
                     if (rayhit)
                     {
                         Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);
