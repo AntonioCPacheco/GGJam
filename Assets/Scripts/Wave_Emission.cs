@@ -43,7 +43,7 @@ public class Wave_Emission : MonoBehaviour {
             case (1):
                 go.transform.position = transform.position;
                 go.GetComponent<Wave_Behaviour>().direction = Camera.main.ScreenToWorldPoint(GetComponent<InputManager>().Left_Mouse_Click());
-                Debug.DrawLine(go.transform.position, Camera.main.ScreenToWorldPoint(GetComponent<InputManager>().Left_Mouse_Click()), Color.white);
+                //Debug.DrawLine(go.transform.position, Camera.main.ScreenToWorldPoint(GetComponent<InputManager>().Left_Mouse_Click()), Color.white);
                 //Debug.Log(go.GetComponent<Wave_Behaviour>().direction);
                 break;
         }
