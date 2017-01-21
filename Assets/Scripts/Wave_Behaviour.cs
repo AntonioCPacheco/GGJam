@@ -13,15 +13,14 @@ public class Wave_Behaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //TEMP
-        //direction = new Vector2(0,1);
         startTime = Time.realtimeSinceStartup;
-        if(mode == 1)
-            direction.Normalize();
+        //if(mode == 1)
+        //    direction.Normalize();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.DrawLine(transform.position, direction);
         if(Time.realtimeSinceStartup - startTime > timeToExpand)
         {
             GameObject.Destroy(this.gameObject);
@@ -45,15 +44,25 @@ public class Wave_Behaviour : MonoBehaviour {
                 }
                 break;
             case (1):
-                for(int i = 0; i < 8; i++)
+                
+                float angle = Vector2.Angle(Vector2.right, direction);
+                Debug.Log(angle);
+                if (direction.y < transform.position.y && direction.x < transform.position.x)
+                {
+                    angle += 180;
+                }
+                for (int i = 0; i <= 8; i++)
                 {
                     Vector2 endpoint = new Vector2(Mathf.Cos((2 * Mathf.PI / 64) * i), Mathf.Sin((2 * Mathf.PI / 64) * i));
-                    float angle = Vector2.Angle(Vector2.right, direction);
-                    //Debug.Log(angle);
-                    endpoint = Quaternion.AngleAxis(angle - 22.5f, Vector3.forward + new Vector3(transform.position.x, transform.position.y)) * endpoint;
+                    
+                    endpoint = Quaternion.AngleAxis(-22.5f, Vector3.forward) * endpoint;
+                    endpoint = Quaternion.AngleAxis(angle, Vector3.forward) * endpoint;
+                    endpoint += new Vector2(transform.position.x, transform.position.y);
                     var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
-                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, layermask);
-                    Debug.DrawLine(transform.position, currentRadius * endpoint.normalized, Color.black);
+                    //Vector2 scaledDirection = Vector2.Scale(endpoint - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
+                    //endpoint = scaledDirection + (Vector2)transform.position;
+                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, endpoint, layermask);
+                    Debug.DrawLine(transform.position, endpoint, Color.black);
                     if (rayhit)
                     {
                         //Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);

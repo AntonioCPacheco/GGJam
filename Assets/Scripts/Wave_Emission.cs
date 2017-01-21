@@ -28,7 +28,7 @@ public class Wave_Emission : MonoBehaviour {
                 if (GetComponent<InputManager>().Left_Mouse_Click() != new Vector3(-1,-1,-1) && Time.realtimeSinceStartup >= lastTime + period)
                 {
                     EmitWave(mode);
-                    lastTime = lastTime = Time.realtimeSinceStartup;
+                    lastTime = Time.realtimeSinceStartup;
                 }
                 break;
         }
@@ -43,6 +43,8 @@ public class Wave_Emission : MonoBehaviour {
             case (1):
                 go.transform.position = transform.position;
                 go.GetComponent<Wave_Behaviour>().direction = Camera.main.ScreenToWorldPoint(GetComponent<InputManager>().Left_Mouse_Click());
+                Debug.DrawLine(go.transform.position, Camera.main.ScreenToWorldPoint(GetComponent<InputManager>().Left_Mouse_Click()), Color.white);
+                //Debug.Log(go.GetComponent<Wave_Behaviour>().direction);
                 break;
         }
     }
