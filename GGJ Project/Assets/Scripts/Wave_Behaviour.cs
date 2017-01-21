@@ -49,16 +49,15 @@ public class Wave_Behaviour : MonoBehaviour {
                 {
                     Vector2 endpoint = new Vector2(Mathf.Cos((2 * Mathf.PI / 64) * i), Mathf.Sin((2 * Mathf.PI / 64) * i));
                     float angle = Vector2.Angle(Vector2.right, direction);
-                    Debug.Log(angle);
-                    endpoint = Quaternion.AngleAxis(angle - 22.5f, Vector3.forward) * endpoint;
+                    //Debug.Log(angle);
+                    endpoint = Quaternion.AngleAxis(angle - 22.5f, Vector3.forward + new Vector3(transform.position.x, transform.position.y)) * endpoint;
                     var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
                     RaycastHit2D rayhit = Physics2D.Linecast(transform.position, currentRadius * endpoint.normalized, layermask);
                     Debug.DrawLine(transform.position, currentRadius * endpoint.normalized, Color.black);
                     if (rayhit)
                     {
-                        Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);
-                        //FIXME
-                        //rayhit.collider.gameObject.GetComponent<>().trigger(transform.position, rayhit);
+                        //Debug.Log("HIT SOMEHTING! It's name is: " + rayhit.collider.gameObject.name);
+                        rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
                     }
                 }
                 break;

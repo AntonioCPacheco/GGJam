@@ -3,7 +3,8 @@ using System;
 
 public class DispersionObject : InteractableObject
 {
-    public void OnCollisionEnter2D(Collision col)
+
+    public override void trigger(RaycastHit2D col, Vector2 origin, float radius)
     {
         throw new NotImplementedException();
     }

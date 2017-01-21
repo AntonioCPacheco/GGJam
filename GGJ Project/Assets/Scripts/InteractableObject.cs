@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-interface InteractableObject
+public abstract class InteractableObject : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision col);
+    public abstract void trigger(RaycastHit2D col, Vector2 origin, float radius);
 }
