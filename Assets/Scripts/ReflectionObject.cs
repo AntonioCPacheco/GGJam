@@ -25,6 +25,6 @@ public class ReflectionObject : InteractableObject
         outgoing = scaledDirection + col.point;
 
         Physics2D.Linecast(col.point, outgoing);
-        Debug.DrawLine(col.point, outgoing, Color.white);
+        //Debug.DrawLine(col.point, outgoing, Color.white);
     }
 }

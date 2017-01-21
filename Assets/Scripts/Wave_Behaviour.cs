@@ -4,15 +4,23 @@ using System.Collections;
 public class Wave_Behaviour : MonoBehaviour {
 
     public Vector2 direction;
-    public int mode = 1; //0 - omnidirectional | 1 - directional
+    public int mode = 1; //0 - omnidirectional | 1 - directional | 2 - unidirectional
     public float radius = 1.5f;
     public float timeToExpand = 3;
+
+    bool[] collided;
+
     float currentRadius = 0;
 
     float startTime;
 
 	// Use this for initialization
 	void Start () {
+        collided = new bool[9];
+        for(int i = 0; i<9; i++)
+        {
+            collided[i] = false;
+        }
         startTime = Time.realtimeSinceStartup;
         //if(mode == 1)
         //    direction.Normalize();
@@ -20,7 +28,7 @@ public class Wave_Behaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.DrawLine(transform.position, direction);
+        //Debug.DrawLine(transform.position, direction);
         if(Time.realtimeSinceStartup - startTime > timeToExpand)
         {
             GameObject.Destroy(this.gameObject);
@@ -46,30 +54,48 @@ public class Wave_Behaviour : MonoBehaviour {
             case (1):
                 
                 float angle = Vector2.Angle(Vector2.right, direction-(Vector2)transform.position);
-                Debug.Log(angle);
                 if (direction.y < transform.position.y)
                 {
                     angle = 360 - angle;
                 }
                 for (int i = 0; i <= 8; i++)
                 {
-                    Vector2 endpoint = new Vector2(Mathf.Cos((2 * Mathf.PI / 64) * i), Mathf.Sin((2 * Mathf.PI / 64) * i));
-                    
-                    endpoint = Quaternion.AngleAxis(-22.5f, Vector3.forward) * endpoint;
-                    endpoint = Quaternion.AngleAxis(angle, Vector3.forward) * endpoint;
-                    endpoint += new Vector2(transform.position.x, transform.position.y);
-                    var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
-                    
-                    Vector2 scaledDirection = Vector2.Scale(endpoint - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
-                    endpoint = scaledDirection + (Vector2)transform.position;
-
-                    RaycastHit2D rayhit = Physics2D.Linecast(transform.position, endpoint, layermask);
-                    Debug.DrawLine(transform.position, endpoint, Color.black);
-                    if (rayhit)
+                    if (!collided[i])
                     {
-                        rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
+                        Vector2 endpoint = new Vector2(Mathf.Cos((2 * Mathf.PI / 64) * i), Mathf.Sin((2 * Mathf.PI / 64) * i));
+
+                        endpoint = Quaternion.AngleAxis(-22.5f, Vector3.forward) * endpoint;
+                        endpoint = Quaternion.AngleAxis(angle, Vector3.forward) * endpoint;
+                        endpoint += new Vector2(transform.position.x, transform.position.y);
+                        var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
+
+                        Vector2 scaledDirection = Vector2.Scale(endpoint - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
+                        endpoint = scaledDirection + (Vector2)transform.position;
+
+                        RaycastHit2D rayhit = Physics2D.Linecast(transform.position, endpoint, layermask);
+                        Debug.DrawLine(transform.position, endpoint, Color.black);
+                        if (rayhit)
+                        {
+                            collided[i] = true;
+                            rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
+                        }
                     }
                 }
+                break;
+            case (2):
+                var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
+
+                /*Vector2 scaledDirection = Vector2.Scale(direction - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
+                direction = scaledDirection + (Vector2)transform.position;
+                */
+                RaycastHit2D rayhit = Physics2D.Linecast(transform.position, direction + (Vector2)transform.position, layermask);
+                Debug.DrawLine(transform.position, direction + (Vector2)transform.position, Color.magenta);
+                if (rayhit)
+                {
+                    rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
+                }
+                break;
+            default:
                 break;
         }
 	}
