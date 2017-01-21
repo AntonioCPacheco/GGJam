@@ -26,11 +26,12 @@ public class ReflectionObject : InteractableObject
             angle = -2*(180 - angle);
         }
 
-        Debug.Log(angle);
+        //Debug.Log(angle);
         Vector2 outgoing = Quaternion.AngleAxis(angle, Vector3.forward) * ((origin - col.point).normalized);
         //Debug.DrawLine(col.point, origin * radius, Color.green);
 
-        Physics2D.Linecast(col.point, outgoing);
-        Debug.DrawLine(col.point, outgoing, Color.white);
+        Physics2D.Linecast(col.point, outgoing * ((1-col.fraction) * radius));
+        Debug.Log(col.fraction);
+        Debug.DrawLine(col.point, outgoing * ((1 - col.fraction) * radius), Color.white);
     }
 }
