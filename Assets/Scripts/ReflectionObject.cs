@@ -42,7 +42,7 @@ public class ReflectionObject : InteractableObject
         hits.Add(outgoing.normalized);
 
         Physics2D.Linecast(col.point, outgoing + col.point);
-        Debug.DrawLine(col.point, outgoing + col.point, Color.magenta);
+        //Debug.DrawLine(col.point, outgoing + col.point, Color.magenta);
 
         Wave_Behaviour wave = Instantiate(wavePrefab).GetComponent<Wave_Behaviour>();
         wave.mode = 2;

@@ -1,11 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Sprites/door.png.meta
-guid: 4cff5c9087f667b4fb62666faeba5972
-timeCreated: 1485027413
-licenseType: Free
-=======
-guid: 13fdcd89da289f84cb5e472dde4ccbe4
->>>>>>> 21d998da4c3d2d918c9acd71aad010542e964276:Assets/Sprites/pulse1.png.meta
+guid: ba9df6c68f40437488354675e3c4fc21
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -33,12 +27,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 6e55a131d1abc50afeab83448a0943943ad7eb54
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0

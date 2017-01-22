@@ -92,7 +92,7 @@ public class Wave_Behaviour : MonoBehaviour {
                 direction = scaledDirection;
                 
                 RaycastHit2D rayhit = Physics2D.Linecast(transform.position, direction + (Vector2)transform.position, layermask);
-                Debug.DrawLine(transform.position, direction + (Vector2)transform.position, Color.magenta);
+                Debug.DrawLine(transform.position, direction + (Vector2)transform.position, Color.cyan);
                 if (rayhit)
                 {
                     Debug.Log("HIT SOMETHING! It's name is: " + rayhit.collider.gameObject.name);

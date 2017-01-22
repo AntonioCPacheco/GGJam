@@ -1,11 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Sprites/aesteroid_door.png.meta
-guid: 81407a32ba8c4ff4886d9577bc757094
-timeCreated: 1485027414
-licenseType: Free
-=======
-guid: 03ae702af7723a44ebcb1282cddca918
->>>>>>> 21d998da4c3d2d918c9acd71aad010542e964276:Assets/Sprites/pulse3.png.meta
+guid: 8bf863ad58f11094fb4b1a1c7931191b
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -33,12 +27,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-<<<<<<< HEAD
-    filterMode: -1
-=======
     filterMode: 0
->>>>>>> 6e55a131d1abc50afeab83448a0943943ad7eb54
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
