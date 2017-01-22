@@ -6,6 +6,7 @@ public class Player_Attack : MonoBehaviour
     public Sprite handle;
     InputManager input;
     GameObject toDrag;
+    GameObject trail;
     float speed = 0.5f;
     bool dragging = false;
     float radius = 2;
@@ -34,7 +35,16 @@ public class Player_Attack : MonoBehaviour
                     {
                         toDrag = hit.transform.gameObject;
                     }
-
+                    trail = new GameObject();
+                    trail.transform.position = transform.position;
+                    SpriteRenderer sr = trail.AddComponent<SpriteRenderer>();
+                    sr.sprite = handle;
+                    float angle = Vector2.Angle(Vector2.right, toDrag.transform.position - transform.position);
+                    if (toDrag.transform.position.y < transform.position.y)
+                    {
+                        angle = 360 - angle;
+                    }
+                    trail.transform.Rotate(new Vector3(0,0,angle));
                     dragging = true;
                     Cursor.visible = false;
                     Debug.Log("Target Position: " + toDrag.transform.position);
@@ -42,12 +52,21 @@ public class Player_Attack : MonoBehaviour
             }
             if (dragging && toDrag != null)
             {
+                trail.transform.position = transform.position;
+                float angle = Vector2.Angle(Vector2.right, toDrag.transform.position - transform.position);
+                if (toDrag.transform.position.y < transform.position.y)
+                {
+                    angle = 360 - angle;
+                }
+                trail.transform.localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 mousePosition.z = toDrag.transform.position.z;
                 toDrag.transform.position = Vector3.Lerp(toDrag.transform.position, mousePosition, speed * Time.deltaTime);
             }
-        } else
+        } else if(dragging)
         {
+            //GameObject.Destroy(trail);
             Cursor.visible = true;
             dragging = false;
             toDrag = null;
