@@ -66,7 +66,7 @@ public class Player_Attack : MonoBehaviour
             }
         } else if(dragging)
         {
-            //GameObject.Destroy(trail);
+            GameObject.Destroy(trail);
             Cursor.visible = true;
             dragging = false;
             toDrag = null;
