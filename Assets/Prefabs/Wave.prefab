@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435fed7feb934704b8a3260ea60fcfaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveSprite: {fileID: 1000013434324788, guid: c69ca4e037ab56343a25b1fff555d505, type: 2}
   direction: {x: 0, y: 0}
   mode: 1
   radius: 5
   timeToExpand: 20
+  timeBetweenWaves: 0.1

@@ -1,0 +1,81 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 770M (ID=0x11e0)
+    Vendor:   NVIDIA
+    VRAM:     3039 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.152 seconds
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\antonio\Documents\GitHub\GGJam\OutterLight_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.795433 ms
+HIT SOMETHING! It's name is: Switch
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Wave Reflector Rectangle
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+682.2143
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Wave Reflector Rectangle (1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+663.8417
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Wave Reflector Rectangle (2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+636.1022
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Switch (1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Target Position: (4.4, 0.1, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Wave Reflector
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+634.6303
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Wave Repeater
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HIT SOMETHING! It's name is: Switch (2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 44d8 -> priority: 1 
+  Thread -> id: 214c -> priority: 1 

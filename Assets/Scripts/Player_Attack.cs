@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player_Attack : MonoBehaviour
 {
-    public Sprite handle;
+    public GameObject handleObject;
     InputManager input;
     GameObject toDrag;
     GameObject trail;
@@ -35,10 +35,8 @@ public class Player_Attack : MonoBehaviour
                     {
                         toDrag = hit.transform.gameObject;
                     }
-                    trail = new GameObject();
+                    trail = Instantiate(handleObject);
                     trail.transform.position = transform.position;
-                    SpriteRenderer sr = trail.AddComponent<SpriteRenderer>();
-                    sr.sprite = handle;
                     float angle = Vector2.Angle(Vector2.right, toDrag.transform.position - transform.position);
                     if (toDrag.transform.position.y < transform.position.y)
                     {
