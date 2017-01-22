@@ -5,8 +5,8 @@ public class Wave_Behaviour : MonoBehaviour {
 
     public Vector2 direction;
     public int mode = 1; //0 - omnidirectional | 1 - directional | 2 - unidirectional
-    public float radius = 1.5f;
-    public float timeToExpand = 3;
+    public float radius = 10f;
+    public float timeToExpand = 10;
 
     bool[] collided;
 
@@ -22,13 +22,15 @@ public class Wave_Behaviour : MonoBehaviour {
             collided[i] = false;
         }
         startTime = Time.realtimeSinceStartup;
-        //if(mode == 1)
-        //    direction.Normalize();
+
+        if(mode == 2)
+        {
+            transform.position += (Vector3)Vector2.Scale(direction.normalized, new Vector2(0.01f, 0.01f));
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.DrawLine(transform.position, direction);
         if(Time.realtimeSinceStartup - startTime > timeToExpand)
         {
             GameObject.Destroy(this.gameObject);
@@ -46,7 +48,6 @@ public class Wave_Behaviour : MonoBehaviour {
                     if (rayhit.collider != null)
                     {
                         Debug.Log("HIT SOMETHING! It's name is: " + rayhit.collider.gameObject.name);
-                        //FIXME
                         rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
                     }
                 }
@@ -58,7 +59,7 @@ public class Wave_Behaviour : MonoBehaviour {
                 {
                     angle = 360 - angle;
                 }
-                for (int i = 0; i <= 4; i++)
+                for (int i = 0; i <= 8; i++)
                 {
                     if (!collided[i])
                     {
@@ -83,15 +84,19 @@ public class Wave_Behaviour : MonoBehaviour {
                 }
                 break;
             case (2):
+                //FIXME
+                timeToExpand = radius * 0.4f;
                 var layermask = (1 << LayerMask.NameToLayer("WaveCollision"));
-
-                /*Vector2 scaledDirection = Vector2.Scale(direction - (Vector2)transform.position, new Vector2(currentRadius, currentRadius));
-                direction = scaledDirection + (Vector2)transform.position;
-                */
+                
+                Vector2 scaledDirection = Vector2.Scale(direction.normalized, new Vector2(currentRadius, currentRadius));
+                direction = scaledDirection;
+                
                 RaycastHit2D rayhit = Physics2D.Linecast(transform.position, direction + (Vector2)transform.position, layermask);
                 Debug.DrawLine(transform.position, direction + (Vector2)transform.position, Color.magenta);
                 if (rayhit)
                 {
+                    Debug.Log("HIT SOMETHING! It's name is: " + rayhit.collider.gameObject.name);
+                    GameObject.Destroy(this.gameObject);
                     rayhit.collider.gameObject.GetComponent<InteractableObject>().trigger(rayhit, transform.position, currentRadius);
                 }
                 break;

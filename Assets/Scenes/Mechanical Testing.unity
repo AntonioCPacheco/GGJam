@@ -90,28 +90,6 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &911999745 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010831746390, guid: 745bb91da4dbed3408a7404a0d2fe55e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1429024973}
---- !u!50 &911999750
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 911999745}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1001 &942078871
 Prefab:
   m_ObjectHideFlags: 0
@@ -121,11 +99,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000013411512458, guid: f5098ab8236cb7d4faaad25923c0d3be, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.20426977
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013411512458, guid: f5098ab8236cb7d4faaad25923c0d3be, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.3495904
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013411512458, guid: f5098ab8236cb7d4faaad25923c0d3be, type: 2}
       propertyPath: m_LocalPosition.z
@@ -233,14 +211,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010137488524, guid: 745bb91da4dbed3408a7404a0d2fe55e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010137488524, guid: 745bb91da4dbed3408a7404a0d2fe55e, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010137488524, guid: 745bb91da4dbed3408a7404a0d2fe55e, type: 2}
-      propertyPath: m_LocalScale.y
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []

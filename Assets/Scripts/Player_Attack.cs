@@ -3,7 +3,59 @@ using System.Collections;
 
 public class Player_Attack : MonoBehaviour
 {
+    public Sprite handle;
+    InputManager input;
+    GameObject toDrag;
+    float speed = 0.5f;
+    bool dragging = false;
+    float radius = 2;
+    void Start()
+    {
+        input = GetComponent<InputManager>();
+    }
 
+    void Update()
+    {
+        Vector3 mousePosition = input.Right_Mouse_Click();
+        if (mousePosition != new Vector3(-1, -1, -1))
+        {
+            if (!dragging)
+            {
+                var layermask = (1 << LayerMask.NameToLayer("Movable"));
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(mousePosition), Vector2.zero, layermask);
+                
+                if (hit.collider != null && hit.collider.gameObject.tag == "Movable" && (hit.point - (Vector2)transform.position).sqrMagnitude <= (radius*radius))
+                {
+
+                    if(hit.transform.gameObject.tag == "Movable")
+                    {
+                        toDrag = hit.transform.parent.gameObject;
+                    } else
+                    {
+                        toDrag = hit.transform.gameObject;
+                    }
+
+                    dragging = true;
+                    Cursor.visible = false;
+                    Debug.Log("Target Position: " + toDrag.transform.position);
+                }
+            }
+            if (dragging && toDrag != null)
+            {
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                mousePosition.z = toDrag.transform.position.z;
+                toDrag.transform.position = Vector3.Lerp(toDrag.transform.position, mousePosition, speed * Time.deltaTime);
+            }
+        } else
+        {
+            Cursor.visible = true;
+            dragging = false;
+            toDrag = null;
+        }
+    }
+
+
+    /*
     public float maxRadius = .5f;
     public float castSpeed = .01f;
     public float dragFriction = 50.0f;
@@ -65,5 +117,5 @@ public class Player_Attack : MonoBehaviour
         {
             currentRadius = 0.0f;
         }
-    }
+    }*/
 }

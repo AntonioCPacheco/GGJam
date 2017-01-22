@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000013834960408}
   - 50: {fileID: 50000012067016220}
   - 60: {fileID: 60000011270575130}
-  - 114: {fileID: 114000011882671614}
+  - 114: {fileID: 114000013749359934}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -36,10 +36,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012751951210}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: -0.422, y: 2.373, z: 0}
+  m_LocalScale: {x: 1.0000021, y: 1.0000021, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -88,7 +88,7 @@ PolygonCollider2D:
       - {x: 0.21459566, y: 0.023728862}
       - {x: 0.19080983, y: 0.23214512}
       - {x: 0.1628896, y: 0.27054426}
---- !u!114 &114000011882671614
+--- !u!114 &114000013749359934
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14f5e2c02a0e1f24985c02dbc9ada463, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 625349993
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 74c7e28948a83734698ce378a549cbd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

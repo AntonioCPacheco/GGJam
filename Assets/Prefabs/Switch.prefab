@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000012000238932}
   - 114: {fileID: 114000013695213194}
   - 50: {fileID: 50000011079629882}
-  - 60: {fileID: 60000010561934010}
+  - 61: {fileID: 61000010252219300}
   m_Layer: 8
   m_Name: Switch
   m_TagString: Untagged
@@ -36,10 +36,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010983207262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4776702, y: 1.7080224, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 2.459, y: 0.313, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.8, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -60,8 +60,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!60 &60000010561934010
-PolygonCollider2D:
+--- !u!61 &61000010252219300
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -71,23 +71,9 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.15798998, y: 0.2761339}
-      - {x: -0.12788773, y: 0.22273207}
-      - {x: -0.054340363, y: 0.14579713}
-      - {x: -0.06383753, y: -0.098828435}
-      - {x: -0.17668867, y: -0.22463143}
-      - {x: -0.18798995, y: -0.27499998}
-      - {x: 0.19458771, y: -0.27499998}
-      - {x: 0.19345403, y: -0.22046399}
-      - {x: 0.16872239, y: -0.17892683}
-      - {x: 0.14891791, y: -0.122216105}
-      - {x: 0.03657627, y: -0.05160761}
-      - {x: 0.039246798, y: 0.15049541}
-      - {x: 0.15869737, y: 0.24253607}
-      - {x: 0.1655159, y: 0.276134}
+  m_Offset: {x: -0.0060550375, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.08309868, y: 0.55}
 --- !u!114 &114000013695213194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +100,7 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 14f5e2c02a0e1f24985c02dbc9ada463, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -128,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -9677815
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 63977cc40c330c547a7ffaf96204b2f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
