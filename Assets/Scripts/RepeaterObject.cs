@@ -25,7 +25,7 @@ public class RepeaterObject : InteractableObject
         }
 
         Vector2 dir = col.point - origin;
-        Debug.DrawLine(Vector2.zero, dir, Color.magenta);
+        //Debug.DrawLine(Vector2.zero, dir, Color.magenta);
         hits.Add(dir.normalized);
 
         Wave_Behaviour wave = Instantiate(wavePrefab).GetComponent<Wave_Behaviour>();
