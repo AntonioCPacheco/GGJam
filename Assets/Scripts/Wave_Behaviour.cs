@@ -58,7 +58,7 @@ public class Wave_Behaviour : MonoBehaviour {
                 {
                     angle = 360 - angle;
                 }
-                for (int i = 0; i <= 8; i++)
+                for (int i = 0; i <= 4; i++)
                 {
                     if (!collided[i])
                     {

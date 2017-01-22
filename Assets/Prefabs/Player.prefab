@@ -24,6 +24,7 @@ GameObject:
   - 114: {fileID: 114000011969053120}
   - 58: {fileID: 58000011067897470}
   - 50: {fileID: 50000011505526134}
+  - 114: {fileID: 114000013532115270}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -87,6 +88,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.2
+  acceleration: 0.03
+  friction: 0.15
   maxSpeed: 0.6
 --- !u!114 &114000012188694302
 MonoBehaviour:
@@ -99,6 +102,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331bac359fcac954ea2a844e6d9ee540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013532115270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011474967996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722f4e265b28ffc4eb4744fea50e54aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 4
+  blobSprites:
+  - {fileID: 21300000, guid: 0ea264bb7ce5c23409532359b8dfc728, type: 3}
+  - {fileID: 21300000, guid: c34377256be0faa4da04a86396e0ca51, type: 3}
+  - {fileID: 21300000, guid: 6c594854fe355124e8fcc78486edf6c2, type: 3}
+  - {fileID: 21300000, guid: f7c2b9a1e8250d449b97ffc4c179d03d, type: 3}
 --- !u!212 &212000010146197832
 SpriteRenderer:
   m_ObjectHideFlags: 1
