@@ -54,4 +54,4 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   mode: 1
   radius: 1.5
-  timeToExpand: 5
+  timeToExpand: 1

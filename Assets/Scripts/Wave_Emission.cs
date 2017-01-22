@@ -29,6 +29,7 @@ public class Wave_Emission : MonoBehaviour {
                 {
                     EmitWave(mode);
                     lastTime = Time.realtimeSinceStartup;
+                    GetComponent<Player_Life>().ComputePlayerHealth();
                 }
                 break;
         }
@@ -48,4 +49,5 @@ public class Wave_Emission : MonoBehaviour {
                 break;
         }
     }
+
 }

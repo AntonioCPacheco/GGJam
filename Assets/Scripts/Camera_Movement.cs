@@ -21,7 +21,7 @@ public class Camera_Movement : MonoBehaviour {
 
 		target = new Vector3 (player.position.x, player.position.y, player.position.z);
 
-		cam = GetComponent<Camera> ();
+		cam = GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
