@@ -25,7 +25,7 @@ public class Wave_Emission : MonoBehaviour {
                 }
                 break;
             case (1):
-                if (GetComponent<InputManager>().Left_Mouse_Click() != new Vector3(-1,-1,-1) && Time.realtimeSinceStartup >= lastTime + period)
+                if (GetComponent<InputManager>().Left_Mouse_Click() != new Vector3(-1,-1,-1))// && Time.realtimeSinceStartup >= lastTime + period)
                 {
                     EmitWave(mode);
                     lastTime = Time.realtimeSinceStartup;

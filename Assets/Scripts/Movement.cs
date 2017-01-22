@@ -5,8 +5,8 @@ public class Movement : MonoBehaviour {
 
     public float moveSpeed = .0f;
     public float acceleration = .03f;
-    public float friction = .01f;
-    public float maxSpeed = .5f;
+    public float friction = .15f;
+    public float maxSpeed = .9f;
 
     InputManager input;
     Rigidbody2D rigidBody;
