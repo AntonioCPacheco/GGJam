@@ -1,9 +1,14 @@
 fileFormatVersion: 2
 guid: 058e1f7dde85f3e48b6e246d451d865a
-timeCreated: 1484997525
+timeCreated: 1485047080
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: cosmic_blob_walking_0
+    21300002: cosmic_blob_walking_1
+    21300004: cosmic_blob_walking_2
+    21300006: cosmic_blob_walking_3
+    21300008: cosmic_blob_walking_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +43,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -51,7 +56,72 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: cosmic_blob_walking_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 81.6
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cosmic_blob_walking_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 81.6
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cosmic_blob_walking_2
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 81.6
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cosmic_blob_walking_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 81.6
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cosmic_blob_walking_4
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 81.6
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
