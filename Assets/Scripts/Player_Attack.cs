@@ -44,7 +44,7 @@ public class Player_Attack : MonoBehaviour
 
             mouseInput = Camera.main.ScreenToWorldPoint(mouseInput);
 
-            var layermask = (1 << LayerMask.NameToLayer("Movable"));
+            var layermask = (1 << LayerMask.NameToLayer("Movable") | 1 << LayerMask.NameToLayer("WaveCollision"));
             rayhit = Physics2D.Linecast(transform.position, mouseInput, layermask);
             //if (rayhit.collider == null)
             //    currentRadius = Mathf.Clamp(currentRadius + castSpeed, 0.0f, maxRadius);

@@ -25,7 +25,7 @@ GameObject:
   - 61: {fileID: 61000013534662804}
   m_Layer: 8
   m_Name: Wave Reflector
-  m_TagString: Untagged
+  m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
